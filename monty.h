@@ -32,7 +32,34 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+/**
+ * struct file_details - Structure to hold file details.
+ * @file: The file identifier.
+ * @line_nums: the number of the line containing the command.
+ * @head: A pointer to a stack of stack_t pointers.
+ * @params: the arguments following a command.
+ */
+typedef struct file_details
+{
+	int file;
+	int line_nums;
+	stack_t **head;
+	char **params;
+} file_t;
+
+extern file_t cmd_file;
+file_t cmd_file;
+/* file Manipulation */
+void manage_file(void);
+void handle_line(char *line);
+char **separate_params(char *input);
+void handle_command(char *cmd, char **params);
+int check_line_empty(char *input);
+/* Commands */
+void push(stack_t **stack, unsigned int line_number);
 /* Error Handling */
 void wrong_args_number(void);
 void file_can_t_open(char *file);
+/* Free Memory */
+void free_double_pointer(char **ptr, int length);
 #endif

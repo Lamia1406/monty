@@ -10,11 +10,16 @@
  */
 int main(int argc, char **argv)
 {
-	FILE *file;
+	int file;
+	stack_t *head = NULL;
 
 	if (argc != 2)
 		wrong_args_number();
-	if (open(argv[1], O_RDONLY) == -1)
+	file = open(argv[1], O_RDONLY);
+	if (file == -1)
 		file_can_t_open(argv[1]);
+	cmd_file.file = file;
+	cmd_file.head = &head;
+	manage_file();
 	return (0);
 }
