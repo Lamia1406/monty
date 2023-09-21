@@ -7,9 +7,9 @@
  */
 void add(stack_t **stack, unsigned int line_number)
 {
-	int element, count_el = 0;
+	int count_el = 0;
 	stack_t *temp = *stack;
-	int result = 0;
+	int result = 0, i;
 
 	if (*stack == NULL)
 		stack_empty();
@@ -20,7 +20,7 @@ void add(stack_t **stack, unsigned int line_number)
 	}
 	if (count_el < 2)
 		too_short_stack("add");
-	for (int i = 0; i < 2; i++)
+	for (i = 0; i < 2; i++)
 	{
 		result += (*stack)->n;
 		*stack = (*stack)->next;
