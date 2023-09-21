@@ -18,7 +18,7 @@ void swap(stack_t **stack, unsigned int line_number)
 		temp = temp->next;
 	}
 	if (count_el < 2)
-		too_short_stack();
+		too_short_stack("swap");
 	temp = (*stack)->next;
 	element = temp->n;
 	(*stack)->next = temp->next;

@@ -10,9 +10,10 @@ void stack_empty(void)
 /**
  * too_short_stack - function that handles errors when a stack is
  *				less than a specific number of elements
+ * @op: the operation done on the stack
  */
-void too_short_stack(void)
+void too_short_stack(char *op)
 {
-	fprintf(stderr, "L%u: can't swap, stack too short\n", cmd_file.line_nums);
+	fprintf(stderr, "L%u: can't %s, stack too short\n", cmd_file.line_nums, op);
 	exit(EXIT_FAILURE);
 }
