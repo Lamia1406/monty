@@ -16,7 +16,6 @@ void push(stack_t **stack, unsigned int line_number)
 	if (cmd_file.params == NULL || cmd_file.params[0] == NULL)
 		not_int();
 	n = atoi(cmd_file.params[1]);
-	printf("%d", n);
 	if (cmd_file.params[1][0] != '0' && n == 0)
 		not_int();
 	node->n = n;
