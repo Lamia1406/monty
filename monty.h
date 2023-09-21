@@ -58,12 +58,14 @@ int check_line_empty(char *input);
 /* Commands */
 void push(stack_t **stack, unsigned int line_number);
 void pall(stack_t **stack, unsigned int line_number);
+void pint(stack_t **stack, unsigned int line_number);
 /* Error Handling */
 void wrong_args_number(void);
 void file_can_t_open(char *file);
 void uknown_opcode(char *opcode);
 void malloc_failed(void);
 void not_int(void);
+void stack_empty(void);
 /* Free Memory */
 void free_double_pointer(char **ptr, int length);
 #endif
