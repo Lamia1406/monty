@@ -7,7 +7,7 @@
  */
 void wrong_args_number(void)
 {
-	write(STDERR_FILENO, "USAGE: monty file\n", 18);
+	fprintf(stderr, "USAGE: monty file\n");
 	exit(EXIT_FAILURE);
 }
 /**
@@ -17,8 +17,32 @@ void wrong_args_number(void)
  */
 void file_can_t_open(char *file)
 {
-	write(STDERR_FILENO, "Error: Can't open file ", 23);
-	write(STDERR_FILENO, file, strlen(file));
-	write(STDERR_FILENO, "\n", 1);
+	fprintf(stderr, "Error: Can't open file %s\n", file);
+	exit(EXIT_FAILURE);
+}
+/**
+ * uknown_opcode - function that handles unknown opcodes
+ *			encountered during execution.
+ * @opcode: The unknown opcode encountered.
+ */
+void uknown_opcode(char *opcode)
+{
+	fprintf(stderr, "L%u: unknown instruction %s\n", cmd_file.line_nums, opcode);
+	exit(EXIT_FAILURE);
+}
+/**
+ * malloc_failed - function that handles a failed memory allocation (malloc).
+ */
+void malloc_failed(void)
+{
+	fprintf(stderr, "Error: malloc failed\n");
+	exit(EXIT_FAILURE);
+}
+/**
+ * not_int - function that handles errors when a non-integer is expected.
+ */
+void not_int(void)
+{
+	fprintf(stderr, "L%u: usage: push integer\n", cmd_file.line_nums);
 	exit(EXIT_FAILURE);
 }

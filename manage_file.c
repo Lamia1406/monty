@@ -22,8 +22,7 @@ void manage_file(void)
 			else
 			{
 				line[lineIndex] = '\0';
-				line_number++;
-				cmd_file.line_nums = line_number;
+				cmd_file.line_nums = ++line_number;
 				handle_line(line);
 				lineIndex = 0;
 			}
