@@ -90,7 +90,8 @@ void handle_command(char *cmd, char **params)
 		{"push", push},
 		{"pall", pall},
 		{"pint", pint},
-		{"pop", pop}
+		{"pop", pop},
+		{"swap", swap}
 	};
 	int nb_commands = sizeof(commands) / sizeof(commands[0]);
 

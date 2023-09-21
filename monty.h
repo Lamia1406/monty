@@ -60,6 +60,7 @@ void push(stack_t **stack, unsigned int line_number);
 void pall(stack_t **stack, unsigned int line_number);
 void pint(stack_t **stack, unsigned int line_number);
 void pop(stack_t **stack, unsigned int line_number);
+void swap(stack_t **stack, unsigned int line_number);
 /* Error Handling */
 void wrong_args_number(void);
 void file_can_t_open(char *file);
@@ -67,6 +68,11 @@ void uknown_opcode(char *opcode);
 void malloc_failed(void);
 void not_int(void);
 void stack_empty(void);
+void too_short_stack(void);
 /* Free Memory */
 void free_double_pointer(char **ptr, int length);
+
+/* string <-> int Manipulation */
+int countDigits(int num);
+void realloc_memory(int element);
 #endif
