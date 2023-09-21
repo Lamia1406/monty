@@ -87,7 +87,8 @@ void handle_command(char *cmd, char **params)
 {
 	int j;
 	instruction_t commands[] = {
-		{"push", push}
+		{"push", push},
+		{"pall", pall}
 	};
 	int nb_commands = sizeof(commands) / sizeof(commands[0]);
 

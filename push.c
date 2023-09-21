@@ -16,24 +16,13 @@ void push(stack_t **stack, unsigned int line_number)
 	if (cmd_file.params == NULL || cmd_file.params[0] == NULL)
 		not_int();
 	n = atoi(cmd_file.params[1]);
+	printf("%d", n);
 	if (cmd_file.params[1][0] != '0' && n == 0)
 		not_int();
 	node->n = n;
-	node->next = NULL;
-	if (*stack == NULL)
-	{
-		node->prev = NULL;
-		*stack = node;
-	}
-	else
-	{
-		stack_t *current = *stack;
-
-		while (current->next != NULL)
-		{
-			current = current->next;
-		}
-		current->next = node;
-		node->prev = current;
-	}
+	node->prev = NULL;
+	node->next = *stack;
+	if (*stack != NULL)
+		(*stack)->prev = node;
+	*stack = node;
 }
