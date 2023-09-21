@@ -91,7 +91,7 @@ void handle_command(char *cmd, char **params)
 		{"pall", pall},
 		{"pint", pint},
 		{"pop", pop},
-		{"swap", swap}
+		{"swap", swap},
 	};
 	int nb_commands = sizeof(commands) / sizeof(commands[0]);
 
@@ -104,5 +104,6 @@ void handle_command(char *cmd, char **params)
 			return;
 		}
 	}
-	uknown_opcode(cmd);
+	if (strcmp(cmd, "nop") != 0)
+		uknown_opcode(cmd);
 }
