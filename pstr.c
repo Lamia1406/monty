@@ -11,12 +11,11 @@ void pstr(stack_t **stack, unsigned int line_number)
 
 	if (node == NULL)
 		printf("\n");
-	if (node->n < 0 || node->n > 127)
-		not_ascii();
 	while (node != NULL)
 	{
 		if (node->n == 0 || (node->n < 0 && node->n > 177))
 		{
+			free(node);
 			printf("\n");
 			break;
 		}
