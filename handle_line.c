@@ -95,7 +95,9 @@ void handle_command(char *cmd, char **params)
 		{"add", add},
 		{"sub", sub},
 		{"pchar", pchar},
-		{"div", _div}
+		{"div", _div},
+		{"mul", _mul},
+		{"mod", _mod}
 	};
 	int nb_commands = sizeof(commands) / sizeof(commands[0]);
 
