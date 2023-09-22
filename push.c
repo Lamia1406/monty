@@ -8,22 +8,18 @@
 void push(stack_t **stack, unsigned int line_number)
 {
 	int n;
-	stack_t *node = malloc(sizeof(stack_t));
+	stack_t *node;
 
+	(void)line_number;
+
+	if (cmd_file.params[0] == NULL)
+		not_int();
+	n = atoi(cmd_file.params[0]);
+	if (cmd_file.params[0][0] != '0' && n == 0)
+		not_int();
+	node = malloc(sizeof(stack_t));
 	if (node == NULL)
 		malloc_failed();
-	(void)line_number;
-	if (cmd_file.params == NULL || cmd_file.params[1] == NULL)
-	{
-		free(node);
-		not_int();
-	}
-	n = atoi(cmd_file.params[1]);
-	if (cmd_file.params[1][0] != '0' && n == 0)
-	{
-		free(node);
-		not_int();
-	}
 	node->n = n;
 	if (*stack != NULL)
 	{
