@@ -22,5 +22,7 @@ int main(int argc, char **argv)
 	cmd_file.head = &head;
 	manage_file();
 	free_stack(cmd_file.head);
+	if (cmd_file.status == 1)
+		exit(EXIT_FAILURE);
 	return (0);
 }

@@ -41,8 +41,6 @@ void handle_line(char *line)
 	handle_command(params[0], tags);
 	free_double_pointer(params, i);
 	free_double_pointer(tags, i - 1);
-	if (cmd_file.status == 1)
-		exit(EXIT_FAILURE);
 }
 /**
  * separate_params - function that retrieves all the params from the input
@@ -64,7 +62,7 @@ char **separate_params(char *input)
 	i = 0;
 	while (one_param != NULL)
 	{
-		tokens[i] = malloc(sizeof(strlen(one_param) + 1));
+		tokens[i] = malloc(sizeof(char) * (strlen(one_param) + 1));
 		if (tokens[i] == NULL)
 		{
 			free_double_pointer(tokens, i);

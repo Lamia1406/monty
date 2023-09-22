@@ -28,7 +28,7 @@ void file_can_t_open(char *file)
 void uknown_opcode(char *opcode)
 {
 	fprintf(stderr, "L%u: unknown instruction %s\n", cmd_file.line_nums, opcode);
-	exit(EXIT_FAILURE);
+	cmd_file.status = 1;
 }
 /**
  * malloc_failed - function that handles a failed memory allocation (malloc).
