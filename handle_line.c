@@ -106,6 +106,6 @@ void handle_command(char *cmd, char **params)
 			return;
 		}
 	}
-	if (strcmp(cmd, "nop") != 0)
+	if (strcmp(cmd, "nop") != 0 && cmd[0] != '#')
 		uknown_opcode(cmd);
 }
