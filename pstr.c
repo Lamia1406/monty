@@ -21,6 +21,7 @@ void pstr(stack_t **stack, unsigned int line_number)
 		printf("%c", node->n);
 		node = node->next;
 	}
+	printf("\n");
 	(void)line_number;
 	free(node);
 }
