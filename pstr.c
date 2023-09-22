@@ -13,7 +13,6 @@ void pstr(stack_t **stack, unsigned int line_number)
 	{
 		if ((node->n) <= 0 || node->n > 127)
 		{
-			printf("0");
 			break;
 		}
 		printf("%c", node->n);
