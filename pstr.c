@@ -16,8 +16,11 @@ void pstr(stack_t **stack, unsigned int line_number)
 	while (node != NULL)
 	{
 		if (node->n == 0 || (node->n < 0 && node->n > 177))
+		{
+			printf("\n");
 			break;
-		printf("%c\n", node->n);
+		}
+		printf("%c", node->n);
 		node = node->next;
 	}
 	(void)line_number;
