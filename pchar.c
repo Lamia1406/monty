@@ -10,7 +10,10 @@ void pchar(stack_t **stack, unsigned int line_number)
 	stack_t *node = *stack;
 
 	if (node == NULL)
+	{
 		stack_empty("pchar");
+		return;
+	}
 	if (node->n < 0 || node->n > 127)
 		not_ascii();
 	printf("%c\n", node->n);
