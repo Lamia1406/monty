@@ -5,7 +5,7 @@
  */
 void stack_empty(char *op)
 {
-	fprintf(stderr, "L%u: can't %s, stack empty\n", cmd_file.line_nums, op);
+	fprintf(stderr, "L%u: can't %s an empty stack\n", cmd_file.line_nums, op);
 	exit(EXIT_FAILURE);
 }
 /**
