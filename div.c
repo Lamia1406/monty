@@ -10,7 +10,7 @@ void _div(stack_t **stack, unsigned int line_number)
 {
 	int count_el = 0;
 	stack_t *temp = *stack;
-	int result = 0, i;
+	int result = 0;
 
 	if (*stack == NULL)
 		stack_empty("div");
