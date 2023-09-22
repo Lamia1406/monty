@@ -6,6 +6,7 @@
 void stack_empty(char *op)
 {
 	fprintf(stderr, "L%u: can't %s an empty stack\n", cmd_file.line_nums, op);
+	cmd_file.status = 1;
 }
 /**
  * too_short_stack - function that handles errors when a stack is
@@ -23,7 +24,7 @@ void too_short_stack(char *op)
 void not_ascii(void)
 {
 	fprintf(stderr, "L%u: can't pchar, value out of range\n", cmd_file.line_nums);
-	exit(EXIT_FAILURE);
+	cmd_file.status = 1;
 }
 /**
  * div_zero - function that handles errors when a a specific stack element
