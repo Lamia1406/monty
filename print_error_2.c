@@ -26,3 +26,12 @@ void not_ascii(void)
 	fprintf(stderr, "L%u: can't pchar, value out of range\n", cmd_file.line_nums);
 	exit(EXIT_FAILURE);
 }
+/**
+ * div_zero - function that handles errors when a a specific stack element
+ *						is divided by zero
+ */
+void div_zero(void)
+{
+	fprintf(stderr, "L%u: division by zero\n", cmd_file.line_nums);
+	exit(EXIT_FAILURE);
+}
