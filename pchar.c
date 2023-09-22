@@ -11,7 +11,7 @@ void pchar(stack_t **stack, unsigned int line_number)
 
 	if (node == NULL)
 	{
-		pchar_stack_empty();
+		stack_empty_2("pchar");
 		return;
 	}
 	if (node->n < 0 || node->n > 127)

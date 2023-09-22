@@ -36,10 +36,11 @@ void div_zero(void)
 	cmd_file.status = 1;
 }
 /**
- * pchar_stack_empty - function that handles errors when a stack is empty
+ * stack_empty_2 - function that handles errors when a stack is empty
+ * @op: the operation done on the stack
  */
-void pchar_stack_empty(void)
+void stack_empty_2(char *op)
 {
-	fprintf(stderr, "L%u: can't pchar, stack empty\n", cmd_file.line_nums);
+	fprintf(stderr, "L%u: can't %s, stack empty\n", cmd_file.line_nums, op);
 	cmd_file.status = 1;
 }
