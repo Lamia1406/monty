@@ -17,7 +17,10 @@ void _mod(stack_t **stack, unsigned int line_number)
 		return;
 	}
 	if ((*stack)->n == 0)
+	{
 		div_zero();
+		return;
+	}
 	result = (*stack)->next->n % (*stack)->n;
 	temp = (*stack)->next;
 	(*stack)->next = temp->next;
