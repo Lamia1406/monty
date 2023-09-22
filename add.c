@@ -11,15 +11,16 @@ void add(stack_t **stack, unsigned int line_number)
 	stack_t *temp = *stack;
 	int result = 0, i;
 
-	if (*stack == NULL)
-		stack_empty("add");
 	while (temp != NULL)
 	{
 		count_el++;
 		temp = temp->next;
 	}
 	if (count_el < 2)
+	{
 		too_short_stack("add");
+		return;
+	}
 	for (i = 0; i < 2; i++)
 	{
 		result += (*stack)->n;
