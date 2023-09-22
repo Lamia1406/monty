@@ -7,27 +7,18 @@
  */
 void add(stack_t **stack, unsigned int line_number)
 {
-	int count_el = 0;
-	stack_t *temp = *stack;
-	int result = 0, i;
+	stack_t *temp;
+	int result;
 
-	while (temp != NULL)
-	{
-		count_el++;
-		temp = temp->next;
-	}
-	if (count_el < 2)
+	if (*stack == NULL || (*stack)->next == NULL)
 	{
 		too_short_stack("add");
 		return;
 	}
-	for (i = 0; i < 2; i++)
-	{
-		result += (*stack)->n;
-		*stack = (*stack)->next;
-	}
+	result = (*stack)->n + (*stack)->next->n;
+	temp = (*stack)->next;
+	(*stack)->next = temp->next;
+	(*stack)->n = result;
 	free(temp);
-	realloc_memory(result);
-	push(stack, line_number);
 	(void)line_number;
 }
