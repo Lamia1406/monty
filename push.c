@@ -23,7 +23,6 @@ void push(stack_t **stack, unsigned int line_number)
 	if (node == NULL)
 	{
 		malloc_failed();
-		return;
 	}
 	node->n = n;
 	if (*stack != NULL)
