@@ -12,7 +12,7 @@ void add(stack_t **stack, unsigned int line_number)
 	int result = 0, i;
 
 	if (*stack == NULL)
-		stack_empty();
+		stack_empty("add");
 	while (temp != NULL)
 	{
 		count_el++;

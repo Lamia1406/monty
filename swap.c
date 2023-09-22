@@ -11,7 +11,7 @@ void swap(stack_t **stack, unsigned int line_number)
 	stack_t *temp = *stack;
 
 	if (*stack == NULL)
-		stack_empty();
+		stack_empty("swap");
 	while (temp != NULL)
 	{
 		count_el++;

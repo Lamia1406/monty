@@ -10,7 +10,7 @@ void pint(stack_t **stack, unsigned int line_number)
 	stack_t *node = *stack;
 
 	if (node == NULL)
-		stack_empty();
+		stack_empty("pint");
 	printf("%d\n", node->n);
 	(void)line_number;
 }

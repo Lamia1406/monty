@@ -1,10 +1,11 @@
 #include "monty.h"
 /**
  * stack_empty - function that handles errors when a stack is empty
+ * @op: the operation done on the stack
  */
-void stack_empty(void)
+void stack_empty(char *op)
 {
-	fprintf(stderr, "L%u: can't pint, stack empty\n", cmd_file.line_nums);
+	fprintf(stderr, "L%u: can't %s, stack empty\n", cmd_file.line_nums, op);
 	exit(EXIT_FAILURE);
 }
 /**
@@ -15,5 +16,13 @@ void stack_empty(void)
 void too_short_stack(char *op)
 {
 	fprintf(stderr, "L%u: can't %s, stack too short\n", cmd_file.line_nums, op);
+	exit(EXIT_FAILURE);
+}
+/**
+ * not_ascii - function that handles errors when a char is not in ascii table
+ */
+void not_ascii(void)
+{
+	fprintf(stderr, "L%u: can't pchar, value out of range\n", cmd_file.line_nums);
 	exit(EXIT_FAILURE);
 }

@@ -13,7 +13,7 @@ void sub(stack_t **stack, unsigned int line_number)
 	int result = 0;
 
 	if (*stack == NULL)
-		stack_empty();
+		stack_empty("sub");
 	while (temp != NULL)
 	{
 		count_el++;

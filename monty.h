@@ -70,8 +70,9 @@ void file_can_t_open(char *file);
 void uknown_opcode(char *opcode);
 void malloc_failed(void);
 void not_int(void);
-void stack_empty(void);
+void stack_empty(char *op);
 void too_short_stack(char *op);
+void not_ascii(void);
 /* Free Memory */
 void free_double_pointer(char **ptr, int length);
 /* string <-> int Manipulation */
