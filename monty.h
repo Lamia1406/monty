@@ -84,4 +84,5 @@ void free_double_pointer(char **ptr, int length);
 /* string <-> int Manipulation */
 int countDigits(int num);
 void realloc_memory(int element);
+int isnumber(char *string_num);
 #endif
