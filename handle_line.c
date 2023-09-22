@@ -21,7 +21,7 @@ void handle_line(char *line)
 			free(params[i]);
 		free(params);
 		malloc_failed();
-		exit(EXIT_FAILURE);
+		return;
 	}
 	for (j = 0; j < i - 1 ; j++)
 	{
@@ -33,7 +33,7 @@ void handle_line(char *line)
 			free(params);
 			free_double_pointer(tags, j);
 			malloc_failed();
-			exit(EXIT_FAILURE);
+			return;
 		}
 		strcpy(tags[j], params[j + 1]);
 	}
