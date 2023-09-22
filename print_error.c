@@ -44,5 +44,5 @@ void malloc_failed(void)
 void not_int(void)
 {
 	fprintf(stderr, "L%u: usage: push integer\n", cmd_file.line_nums);
-	exit(EXIT_FAILURE);
+	cmd_file.status = 1;
 }

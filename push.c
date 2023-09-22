@@ -14,7 +14,10 @@ void push(stack_t **stack, unsigned int line_number)
 	(void)line_number;
 
 	if (cmd_file.params[0] == NULL || isnumber(cmd_file.params[0]) == 1)
+	{
 		not_int();
+		return;
+	}
 	n = atoi(cmd_file.params[0]);
 	node = malloc(sizeof(stack_t));
 	if (node == NULL)

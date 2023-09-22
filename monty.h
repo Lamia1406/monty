@@ -38,6 +38,7 @@ typedef struct instruction_s
  * @line_nums: the number of the line containing the command.
  * @head: A pointer to a stack of stack_t pointers.
  * @params: the arguments following a command.
+ * @status: code status number (1 in case of failure)
  */
 typedef struct file_details
 {
@@ -45,6 +46,7 @@ typedef struct file_details
 	int line_nums;
 	stack_t **head;
 	char **params;
+	int status;
 } file_t;
 
 extern file_t cmd_file;

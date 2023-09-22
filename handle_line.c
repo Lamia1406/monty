@@ -39,6 +39,8 @@ void handle_line(char *line)
 	handle_command(params[0], tags);
 	free_double_pointer(params, i);
 	free_double_pointer(tags, i - 1);
+	if (cmd_file.status == 1)
+		exit(EXIT_FAILURE);
 }
 /**
  * separate_params - function that retrieves all the params from the input
