@@ -55,6 +55,7 @@ void handle_line(char *line);
 char **separate_params(char *input);
 void handle_command(char *cmd, char **params);
 int check_line_empty(char *input);
+void copy_non_space_strings(char **argv, char **params, char *token);
 /* Commands */
 void push(stack_t **stack, unsigned int line_number);
 void pall(stack_t **stack, unsigned int line_number);

@@ -13,7 +13,7 @@ void push(stack_t **stack, unsigned int line_number)
 	if (node == NULL)
 		malloc_failed();
 	(void)line_number;
-	if (cmd_file.params == NULL || cmd_file.params[0] == NULL)
+	if (cmd_file.params == NULL || cmd_file.params[1] == NULL)
 	{
 		free(node);
 		not_int();

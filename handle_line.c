@@ -75,7 +75,6 @@ char **separate_params(char *input)
 			break;
 	}
 	tokens[i] = NULL;
-	free(temp_input);
 	return (tokens);
 }
 /**
