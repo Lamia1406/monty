@@ -44,7 +44,7 @@ int isnumber(char *string_num)
 
 	for  (i = 0; string_num[i]; i++)
 	{
-		if (isdigit(string_num[i]) == 0)
+		if (string_num[i] != '-' && isdigit(string_num[i]) == 0)
 			return (1);
 	}
 	return (0);
