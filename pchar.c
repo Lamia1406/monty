@@ -15,5 +15,4 @@ void pchar(stack_t **stack, unsigned int line_number)
 		not_ascii();
 	printf("%c\n", node->n);
 	(void)line_number;
-	free(node);
 }
