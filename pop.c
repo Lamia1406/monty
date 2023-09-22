@@ -7,8 +7,12 @@
  */
 void pop(stack_t **stack, unsigned int line_number)
 {
+	stack_t *temp;
+
 	if (*stack == NULL)
 		stack_empty("pop");
-	*stack = (*stack)->next;
+	temp = *stack;
+	*stack = temp->next;
+	free(temp);
 	(void)line_number;
 }

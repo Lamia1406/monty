@@ -21,5 +21,6 @@ int main(int argc, char **argv)
 	cmd_file.file = file;
 	cmd_file.head = &head;
 	manage_file();
+	free_stack(cmd_file.head);
 	return (0);
 }

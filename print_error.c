@@ -36,7 +36,7 @@ void uknown_opcode(char *opcode)
 void malloc_failed(void)
 {
 	fprintf(stderr, "Error: malloc failed\n");
-	exit(EXIT_FAILURE);
+	cmd_file.status = 1;
 }
 /**
  * not_int - function that handles errors when a non-integer is expected.

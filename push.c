@@ -21,7 +21,10 @@ void push(stack_t **stack, unsigned int line_number)
 	n = atoi(cmd_file.params[0]);
 	node = malloc(sizeof(stack_t));
 	if (node == NULL)
+	{
 		malloc_failed();
+		return;
+	}
 	node->n = n;
 	if (*stack != NULL)
 	{

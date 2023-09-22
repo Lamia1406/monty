@@ -21,6 +21,7 @@ void handle_line(char *line)
 			free(params[i]);
 		free(params);
 		malloc_failed();
+		exit(EXIT_FAILURE);
 	}
 	for (j = 0; j < i - 1 ; j++)
 	{
@@ -32,6 +33,7 @@ void handle_line(char *line)
 			free(params);
 			free_double_pointer(tags, j);
 			malloc_failed();
+			exit(EXIT_FAILURE);
 		}
 		strcpy(tags[j], params[j + 1]);
 	}
@@ -56,6 +58,7 @@ char **separate_params(char *input)
 	if (tokens == NULL)
 	{
 		malloc_failed();
+		return (NULL);
 	}
 	one_param = strtok(input, " \t");
 	i = 0;
@@ -63,7 +66,11 @@ char **separate_params(char *input)
 	{
 		tokens[i] = malloc(sizeof(strlen(one_param) + 1));
 		if (tokens[i] == NULL)
+		{
+			free_double_pointer(tokens, i);
 			malloc_failed();
+			return (NULL);
+		}
 		strcpy(tokens[i], one_param);
 		one_param = strtok(NULL, " \t");
 		i++;

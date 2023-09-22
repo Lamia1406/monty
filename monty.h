@@ -83,6 +83,7 @@ void not_ascii(void);
 void div_zero(void);
 /* Free Memory */
 void free_double_pointer(char **ptr, int length);
+void free_stack(stack_t **head);
 /* string <-> int Manipulation */
 int countDigits(int num);
 void realloc_memory(int element);
