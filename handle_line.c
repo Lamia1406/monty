@@ -47,7 +47,7 @@ void handle_line(char *line)
 */
 char **separate_params(char *input)
 {
-	char **tokens, *one_param, *temp_input;
+	char **tokens, *one_param;
 	int i = 0;
 
 	tokens = (char **) malloc(sizeof(char *) * (3));
