@@ -81,6 +81,7 @@ void stack_empty(char *op);
 void too_short_stack(char *op);
 void not_ascii(void);
 void div_zero(void);
+void pchar_stack_empty(void);
 /* Free Memory */
 void free_double_pointer(char **ptr, int length);
 void free_stack(stack_t **head);

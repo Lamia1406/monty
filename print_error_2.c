@@ -35,3 +35,11 @@ void div_zero(void)
 	fprintf(stderr, "L%u: division by zero\n", cmd_file.line_nums);
 	cmd_file.status = 1;
 }
+/**
+ * pchar_stack_empty - function that handles errors when a stack is empty
+ */
+void pchar_stack_empty(void)
+{
+	fprintf(stderr, "L%u: can't pchar, stack empty\n", cmd_file.line_nums);
+	cmd_file.status = 1;
+}
