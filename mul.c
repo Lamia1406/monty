@@ -8,25 +8,18 @@
  */
 void _mul(stack_t **stack, unsigned int line_number)
 {
-	int count_el = 0;
-	stack_t *temp = *stack;
-	int result = 0;
+	stack_t *temp;
+	int result;
 
-	if (*stack == NULL)
-		stack_empty("mul");
-	while (temp != NULL)
+	if (*stack == NULL || (*stack)->next == NULL)
 	{
-		count_el++;
-		temp = temp->next;
-	}
-	free(temp);
-	if (count_el < 2)
 		too_short_stack("mul");
-	result = (*stack)->n;
-	(*stack) = (*stack)->next;
-	result *= (*stack)->n;
-	(*stack) = (*stack)->next;
-	realloc_memory(result);
-	push(stack, line_number);
+		return;
+	}
+	result = (*stack)->n * (*stack)->next->n;
+	temp = (*stack)->next;
+	(*stack)->next = temp->next;
+	(*stack)->n = result;
+	free(temp);
 	(void)line_number;
 }
