@@ -9,8 +9,6 @@ void pstr(stack_t **stack, unsigned int line_number)
 {
 	stack_t *node = *stack;
 
-	if (node == NULL)
-		printf("\n");
 	while (node != NULL)
 	{
 		if (node->n == 0 || (node->n < 0 && node->n > 177))
@@ -22,5 +20,6 @@ void pstr(stack_t **stack, unsigned int line_number)
 	}
 	printf("\n");
 	(void)line_number;
-	free(node);
+	if (*stack != NULL)
+		free(node);
 }
