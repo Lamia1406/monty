@@ -32,5 +32,5 @@ void not_ascii(void)
 void div_zero(void)
 {
 	fprintf(stderr, "L%u: division by zero\n", cmd_file.line_nums);
-	exit(EXIT_FAILURE);
+	cmd_file.status = 1;
 }
