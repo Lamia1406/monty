@@ -10,7 +10,7 @@ void rotr(stack_t **stack, unsigned int line_number)
 	stack_t *node;
 	stack_t *temp_n;
 
-	if (*stack == NULL)
+	if (*stack == NULL || (*stack)->next == NULL)
 		return;
 	node = *stack;
 	while (node->next != NULL)
